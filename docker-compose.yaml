@@ -1,0 +1,19 @@
+services:
+
+  backend:
+    build:
+      context: ./leo_backend
+      dockerfile: ../dockerfile_backend
+    container_name: leo_backend
+    ports:
+      - "5001:5001"
+
+  frontend:
+    build:
+      context: ./leo_frontend
+      dockerfile: ../dockerfile_frontend
+    container_name: leo_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
