@@ -1,11 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Flask Backend Running"
-
+return render_template('index.html')
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
 
