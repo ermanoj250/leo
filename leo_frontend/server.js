@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.post("/submit", async (req, res) => {
     try {
         const response = await axios.post(
-    "http://43.204.19.53:5001/process",
+    "http://127.0.0.1:5001/process",
     new URLSearchParams(req.body),
     {
         headers: {
