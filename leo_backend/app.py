@@ -19,7 +19,7 @@ def submit():
 name = data.get('name')
 email = data.get('email')
 
-    return jsonify({
+        return jsonify({
         "status": "success",
         "name": name,
         "email": email
