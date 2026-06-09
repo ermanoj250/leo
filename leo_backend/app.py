@@ -6,6 +6,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
 
@@ -16,14 +17,16 @@ def submit():
 
     data = request.get_json(silent=True) or request.form
 
-name = data.get('name')
-email = data.get('email')
+    name = data.get('name')
+    email = data.get('email')
 
-        return jsonify({
-            "status": "success",
-            "name": name,
-            "email": email
-        })
+    return jsonify({
+        "status": "success",
+        "name": name,
+        "email": email
+    })
+
+
 @app.route('/process', methods=['GET', 'POST'])
 def process():
 
@@ -38,6 +41,7 @@ def process():
     <p>Name: {name}</p>
     <p>Email: {email}</p>
     """
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
