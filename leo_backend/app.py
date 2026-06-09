@@ -20,10 +20,10 @@ name = data.get('name')
 email = data.get('email')
 
         return jsonify({
-        "status": "success",
-        "name": name,
-        "email": email
-    })
+            "status": "success",
+            "name": name,
+            "email": email
+        })
 @app.route('/process', methods=['GET', 'POST'])
 def process():
 
