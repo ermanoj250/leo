@@ -14,8 +14,10 @@ def submit():
             "message": "Submit endpoint is working. Use POST to send data."
         })
 
-    name = request.form.get('name')
-    email = request.form.get('email')
+    data = request.get_json(silent=True) or request.form
+
+name = data.get('name')
+email = data.get('email')
 
     return jsonify({
         "status": "success",
