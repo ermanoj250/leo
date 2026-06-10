@@ -24,7 +24,7 @@ app.post("/submit", async (req, res) => {
         }
     }
 );
-        );
+        
 
         res.send(response.data);
     } catch (error) {
